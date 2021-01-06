@@ -44,7 +44,7 @@ int main(int argc, char *argv[]){
     MPI_Gather(&local_max, 1, MPI_INTEGER, arr_of_max, 1, MPI_INTEGER, 0, MPI_COMM_WORLD);
 
     if (rank == 0) {
-        global_max = find_max(arr_of_max, 4);
+        global_max = find_max(arr_of_max, size);
         printf("Global max = %d found by process %d\n", global_max, rank);fflush(stdout);
     }
     
